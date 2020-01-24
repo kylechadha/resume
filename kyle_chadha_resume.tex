@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{graphicx}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -73,6 +74,8 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+\newcommand\sbullet[1][.7]{\mathbin{\vcenter{\hbox{\hspace{3pt}\scalebox{#1}{$\bullet$}\hspace{3pt}}}}}
+
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -113,8 +116,8 @@
       \resumeItemListEnd
 
     \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
+      {BuzzFeed}{New York, NY}
+      {Frontend Engineer}{Mar 2014 - Jan 2015}
       \resumeItemListStart
         \resumeItem{Notifications}
           {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
@@ -135,27 +138,49 @@
         \resumeItem{Course Dashboards}
           {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
       \resumeItemListEnd
-
+      
     \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
+      {Socify \& AdaptForce}{Los Angeles, CA}
+      {CTO and Co-Founder}{Apr 2013 – Mar 2014}
       \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
+        \resumeItemSimple
+          {Led the product design and development process for two early stage entrepreneurial projects [and fell in love with software development...]}
+        \resumeItemSimple
+          {Responsible for day to day management of the outsourced dev team, product design, and operations}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
+      {Clinton Foundation}{Kigali, Rwanda}
+      {Senior Associate}{Jan 2013 - Jul 2013}
       \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
+        \resumeItemSimple
+          {Advised the Rwandan government on the integration of analytics into their resource tracking and decision systems}
+        \resumeItemSimple
+          {Performed a number of high level analyses to deepen the government’s understanding of the flow of funding into the country and quantify the true cost of various coverage options}
       \resumeItemListEnd
 
+    \resumeSubheading
+      {ZS Associates}{Los Angeles, CA}
+      {Associate Consultant (2012), Associate (2009-2011)}{Jul 2009 - Jun 2012}
+      \resumeItemListStart
+        \resumeItemSimple
+          {Consulted for clients [at a top 50 global consulting firm...] in the sales and marketing space, specializing in analytics and quant market research}
+        \resumeItemSimple
+          {Led the team evaluating the impact of competitor entry on a \$4.5Bn brand facing patent expiration; Conducted a global market research study and modeled product share using statistical conjoint analysis}
+        \resumeItemSimple
+          {Collaborated with ZS academic experts to develop an innovative choice modeling solution that returned quantitative, data-driven recommendations on the relative weight of customer preferences}
+        \resumeItemSimple
+          {Firm Leadership: Created and led firm-wide trainings on quantitative research methods, statistical modeling, and PowerPoint design as an instructor for ‘ZS University’}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------Independent Coursework-----------------
+\section{Independent Coursework}
+  \resumeSubHeadingListStart
+    \resumeSubItemSimple
+      {UCSD Coursera - Data Structures and Algorithms Specialization $\sbullet$ Stanford CS106b - Programming Abstractions Harvard CS50 - Introduction to Computer Science $\sbullet$ UC Berkeley CS162 - Operating Systems and Systems Programming $\sbullet$ Stanford CS144 - Introduction to Computer Networking $\sbullet$ Stanford Lagunita - Introduction to Databases $\sbullet$ AWS Developer edX - Building on AWS}
   \resumeSubHeadingListEnd
 
 
@@ -165,25 +190,15 @@
     \resumeSubItem{PathSchedule}
       {Developed an Amazon Alexa skill using AWS Lambda, Node.js, and GTFS transit data to respond to queries about upcoming PATH train times}
   \resumeSubHeadingListEnd
-  
-  
-%-----------SELF STUDY-----------------
-\section{Self Study}
-  \resumeSubHeadingListStart
-    \resumeSubItemSimple
-      {AWS Developer - Building on AWS Harvard CS50 - Introduction to Computer Science Stanford CS106b - Programming Abstractions Stanford CS144 - Introduction to Computer Networking Stanford Lagunita - Introduction to Databases UC Berkeley CS162 - Operating Systems and Systems Programming UCSD Data Structures and Algorithms Specialization}
-  \resumeSubHeadingListEnd
 
 
-%
-%--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
+%--------Volunteering and Interests------------
+% \section{Volunteering and Interests}
 %  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
+%     \resumeSubItem{Volunteering}
+%       {Taught 4th graders engineering and robotics concepts using Lego Mindstorms as a member of NYCares}
+%     \resumeSubItem{Interests}
+%       {City captain for Tea With Strangers, hiking, technology, wearables, scuba diving, social psychology}
 %  \resumeSubHeadingListEnd
 
 
