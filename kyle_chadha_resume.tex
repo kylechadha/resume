@@ -55,6 +55,12 @@
     {#1 \vspace{-2pt}}
   }
 }
+\newcommand{\resumeItemSimpleIndented}[1]{
+  \item[--]\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
@@ -109,34 +115,57 @@
       {Thomson Reuters (now Refinitiv)}{New York, NY}
       {Software Engineer}{Jan 2016 - Dec 2019}
       \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+        \resumeItemSimple
+          {Developed and maintained RFC 6120/6121 compliant messaging and presence servers for a realtime financial terminal serving \raisebox{-0.7ex}\textasciitilde 300k users across the globe}
+        \resumeItemSimple
+          {Led the implementation of push notifications across the platform (server, desktop, iOS, and android clients), which saw rapid adoption and use across the user base with 0 production incidents to date}
+        \begin{itemize}[leftmargin=.2in]\resumeItemSimpleIndented
+          {Highly concurrent architecture with decoupled publishers and consumers, fault tolerance of downstream services, and the ability to gracefully handle back pressure, panic/recovery, and service restart with high durability}
+        \end{itemize}
+        \resumeItemSimple
+          {Architected an ETL system which synthesized data from multiple data stores to produce realtime customer reports; required interfacing with engineers across the tech org to mitigate high latency in upstream systems, reducing 1-2 second latencies to sub 100ms in many cases}
+        \resumeItemSimple
+          {Decomissioned an uncompilable legacy system by porting its component parts to microservices, resulting in a \$400k annual cost savings}
+        \resumeItemSimple
+          {Implemented a new storage layer for our core messaging server which required updating more than 3500 references across the codebase and improved code coverage from \raisebox{-0.7ex}\textasciitilde 45\% to 94.7\%}
+        \resumeItemSimple
+          {Developed a highly optimized batch processing job that enforced compliance policy changes on chatrooms, ensuring all updates occurred within a 15 minute window after business close in the US and before business open in Asia}
+        \resumeItemSimple
+          {Designed and built an internal API to allow product teams to access privileged data in a secure, role-based way using JWT}
+        \resumeItem{Firm Leadership}
+        {Supported new team members with onboarding onto Go, championed Go best practices and idioms, led triage of new tickets during standup, developed all new applications with 90\%+ code coverage}
+        \resumeItem{Technologies}
+        {Go (heavily), MySQL, AWS, Redis, Docker, Vagrant, Puppet, GitLab Pipelines, JWT}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Gooten}{New York, NY}
+      {Software Engineer}{Jan 2015 - Jan 2016}
+      \resumeItemListStart
+        \resumeItemSimple
+          {Ported the main user-facing web application from .NET to Go -- using Go’s concurrency model, an LRU cache, and a buffer pool for template writes to significantly improve performance and scalability over the .NET applicationn}
+        \resumeItemSimple
+          {Made a number of improvements to the application ecosystem: implemented Nginx as a reverse proxy and cache, switched to a multi-container Docker architecture, migrated from Azure to AWS EB, configured Jenkins CI, and built a Vagrant dev environment to seamlessly handle dependencies and tooling}
+        \resumeItemSimple
+          {Developed a high throughput microservice written in Go to enable partners to proxy their user accounts through our system; Deployed on Google App Engine and backed by Google Datastore}
+        \resumeItemSimple
+          {Built a logging microservice written in Go to batch and publish client and server errors to an Elasticsearch Logstash Kibana instance (via RabbitMQ)}
+        \resumeItem{Technologies}
+        {Go (heavily), JavaScript, AWS, Docker, Google App Engine, Google Datastore, Jenkins, Vagrant}
       \resumeItemListEnd
 
     \resumeSubheading
       {BuzzFeed}{New York, NY}
       {Frontend Engineer}{Mar 2014 - Jan 2015}
       \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
+        \resumeItemSimple
+          {Modernized the BuzzFeed mobile web application, leading refactor efforts and developing a robust, scalable JavaScript application architecture based on the Module–Fa\c cade–Mediator pattern}
+        \resumeItemSimple
+          {Implemented a modern script loader, templating, Jasmine and Selenium test coverage, client side error logging, and optimizations for the critical rendering path and page performance}
+        \resumeItem{Firm Leadership}
+          {Started and led BuzzMasters (BuzzFeed meets Toastmasters), a public speaking club with more than 50 active members in the NYC office}
+        \resumeItem{Technologies}
+        {JavaScript (heavily), HTML5, CSS3, SCSS, Selenium, Jasmine, Grunt}
       \resumeItemListEnd
       
     \resumeSubheading
@@ -144,7 +173,7 @@
       {CTO and Co-Founder}{Apr 2013 – Mar 2014}
       \resumeItemListStart
         \resumeItemSimple
-          {Led the product design and development process for two early stage entrepreneurial projects [and fell in love with software development...]}
+          {Led the product design and development process for two early stage entrepreneurial projects and fell in love with software development along the way}
         \resumeItemSimple
           {Responsible for day to day management of the outsourced dev team, product design, and operations}
       \resumeItemListEnd
