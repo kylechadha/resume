@@ -18,6 +18,7 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{graphicx}
+\usepackage{fontawesome}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -26,11 +27,11 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\oddsidemargin}{-0.4in}
+\addtolength{\evensidemargin}{-0.4in}
+\addtolength{\textwidth}{.8in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textheight}{.8in}
 
 \urlstyle{same}
 
@@ -40,24 +41,24 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    \textbf{#1}{: #2 \vspace{-1.5pt}}
   }
 }
 \newcommand{\resumeItemSimple}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{-1.5pt}}
   }
 }
 \newcommand{\resumeItemSimpleIndented}[1]{
   \item[--]\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{-1.5pt}}
   }
 }
 
@@ -70,8 +71,8 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
-\newcommand{\resumeSubItemSimple}[1]{\resumeItemSimple{#1}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-2pt}}
+\newcommand{\resumeSubItemSimple}[1]{\resumeItemSimple{#1}\vspace{-2pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -80,7 +81,7 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-\newcommand\sbullet[1][.7]{\mathbin{\vcenter{\hbox{\hspace{3pt}\scalebox{#1}{$\bullet$}\hspace{3pt}}}}}
+\newcommand\sbullet[1][.8]{\mathbin{\vcenter{\hbox{\hspace{4pt}\scalebox{#1}{$\bullet$}\hspace{4pt}}}}}
 
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,15 +130,15 @@
         \resumeItemSimple
           {Implemented a new storage layer for our core messaging server which required updating more than 3500 references across the codebase and improved code coverage from \raisebox{-0.7ex}\textasciitilde 45\% to 94.7\%}
         \resumeItemSimple
-          {Developed a highly optimized batch processing job that enforced compliance policy changes on chatrooms, ensuring all updates occurred within a 15 minute window after business close in the US and before business open in Asia}
+          {Developed a highly optimized batch processing job that enforced compliance policy changes on chatrooms, ensuring all updates occurred within a 15 minute window between US business close and Asia business open}
         \resumeItemSimple
-          {Designed and built an internal API to allow product teams to access privileged data in a secure, role-based way using JWT}
+          {Designed and built an internal API to allow product teams to access privileged data in a secure, role-based way}
         \resumeItemSimple
           {Aggressive focus on improving service reliability: fixed 117 bugs over 4 years, improved metrics and alerting, developed a command line tool for load and integration testing; Team's efforts resulted in a nearly 90\% reduction in production incidents over 4 years}
         \resumeItem{Firm Leadership}
         {Supported new team members with onboarding onto Go, championed Go best practices and idioms, led triage of new tickets during standup, developed all new applications with 90\%+ code coverage}
         \resumeItem{Technologies}
-        {Go (heavily), MySQL, AWS, Redis, Docker, Vagrant, Puppet, GitLab Pipelines, JWT}
+        {Go (heavily), MySQL, AWS, Redis, Docker, Graphite/Grafana, Splunk, Vagrant, Puppet, GitLab Pipelines, JWT}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -145,15 +146,15 @@
       {Software Engineer}{Jan 2015 - Jan 2016}
       \resumeItemListStart
         \resumeItemSimple
-          {Ported the main user-facing web application from .NET to Go -- using Go’s concurrency model, an LRU cache, and a buffer pool for template writes to significantly improve performance and scalability over the .NET applicationn}
+          {Ported the main user-facing web application from .NET to Go -- utilizing an LRU cache and a buffer pool for template writes to significantly improve performance and scalability over the .NET application}
         \resumeItemSimple
           {Made a number of improvements to the application ecosystem: implemented Nginx as a reverse proxy and cache, switched to a multi-container Docker architecture, migrated from Azure to AWS EB, and built a Vagrant dev environment to seamlessly handle dependencies and tooling}
         \resumeItemSimple
           {Developed a high throughput microservice written in Go to enable partners to proxy their user accounts through our system; Deployed on Google App Engine and backed by Google Datastore}
         \resumeItemSimple
-          {Built a logging microservice written in Go to batch and publish client and server errors to an Elasticsearch Logstash Kibana instance (via RabbitMQ)}
+          {Built a logging microservice written in Go to batch and publish client and server errors to an Elasticsearch Logstash Kibana instance}
         \resumeItem{Technologies}
-        {Go (heavily), JavaScript, AWS, Docker, Google App Engine, Google Datastore, Jenkins, Vagrant}
+        {Go (heavily), JavaScript, AWS, Docker, Google App Engine / Datastore, Jenkins, Vagrant}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -161,9 +162,11 @@
       {Frontend Engineer}{Mar 2014 - Jan 2015}
       \resumeItemListStart
         \resumeItemSimple
-          {Modernized the BuzzFeed mobile web application, leading refactor efforts and developing a robust, scalable JavaScript application architecture based on the Module–Fa\c cade–Mediator pattern}
-        \resumeItemSimple
           {Implemented a modern script loader, templating, Jasmine and Selenium test coverage, client side error logging, and optimizations for the critical rendering path and page performance}
+        \resumeItemSimple
+          {Modernized the BuzzFeed mobile web application, leading refactor efforts and developing a robust, scalable JavaScript application architecture}
+        \resumeItemSimple
+          {Built new versions of the front end for local and social authentication, the navigation menu, the dialog module, and a portion of the comment and reaction functionality}
         \resumeItem{Firm Leadership}
           {Started and led BuzzMasters (BuzzFeed meets Toastmasters), a public speaking club with more than 50 active members in the NYC office}
         \resumeItem{Technologies}
@@ -171,14 +174,13 @@
       \resumeItemListEnd
       
     \resumeSubheading
-      {Socify \& AdaptForce}{Los Angeles, CA}
+      {Socify}{Los Angeles, CA}
       {CTO and Co-Founder}{Apr 2013 – Mar 2014}
       \resumeItemListStart
         \resumeItemSimple
-          {Led the product design and development process for two early stage entrepreneurial projects and fell in love with software development along the way}
-        %   Led the product design and development process for a startup focused on applying dating app mechanics to making professional connections
+          {Led the product design and development process for a startup focused on applying dating app mechanics to making social and professional connections}
         \resumeItemSimple
-          {Responsible for day to day management of the outsourced dev team, product design, and operations}
+          {Managed the outsourced dev team, product design, and operations -- and fell in love with software development along the way}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -196,13 +198,15 @@
       {Associate Consultant (2012), Associate (2009-2011)}{Jul 2009 - Jun 2012}
       \resumeItemListStart
         \resumeItemSimple
-          {Consulted for clients [at a top 50 global consulting firm...] in the sales and marketing space, specializing in analytics and quant market research}
+          {Consulted for clients in the sales and marketing space at a top 50 global consulting firm, specializing in analytics and quantitative research}
         \resumeItemSimple
           {Led the team evaluating the impact of competitor entry on a \$4.5Bn brand facing patent expiration; Conducted a global market research study and modeled product share using statistical conjoint analysis}
         \resumeItemSimple
           {Collaborated with ZS academic experts to develop an innovative choice modeling solution that returned quantitative, data-driven recommendations on the relative weight of customer preferences}
+        \resumeItemSimple
+          {Restructured the sales force of a medical products and services firm to capture an estimated \$1.5Bn in unrealized sales potential; Engaged C suite executives in discussions around size and structure and devised a deployment strategy to optimize selling efforts}
         \resumeItem{Firm Leadership}
-          {Created and led firm-wide trainings on quantitative research methods, statistical modeling, and PowerPoint design as an instructor for ‘ZS University’}
+          {Managed two associates in LA and a research team of six offshore; Created and led firm-wide trainings on quantitative research methods, statistical modeling, and PowerPoint design as an instructor for ‘ZS University’; Interviewed candidates and served as a mentor for new associates}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -211,7 +215,7 @@
 %-----------Independent Coursework-----------------
 \section{Independent Coursework}
   \resumeSubHeadingListStart
-    \resumeSubItemSimple
+    \linespread{1.2}\resumeSubItemSimple
       {UCSD Coursera - Data Structures and Algorithms Specialization $\sbullet$ Stanford CS106b - Programming Abstractions Harvard CS50 - Introduction to Computer Science $\sbullet$ UC Berkeley CS162 - Operating Systems and Systems Programming $\sbullet$ Stanford CS144 - Introduction to Computer Networking $\sbullet$ Stanford Lagunita - Introduction to Databases $\sbullet$ AWS Developer edX - Building on AWS}
   \resumeSubHeadingListEnd
 
@@ -219,8 +223,10 @@
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem{PathSchedule}
-      {Developed an Amazon Alexa skill using AWS Lambda, Node.js, and GTFS transit data to enable Alexa to respond to queries about upcoming PATH train times}
+    \resumeSubItem{\href{https://www.amazon.com/Whens-next-Jersey-PATH-train/dp/B073KQ5G9K}{PathSchedule}}
+      {Developed an Amazon Alexa skill using AWS Lambda, Node.js, and GTFS transit data to enable Alexa to respond to queries about upcoming New Jersey PATH train times}
+    \resumeSubItem{\href{https://chrome.google.com/webstore/detail/line-highlighter/nffehhefkilbinmemhnhepadbeadnfep}{Line Highlighter}}
+      {Chrome extension to highlight the user's current position on a page, originally designed to help read technical specs / docs online}
   \resumeSubHeadingListEnd
 
 
@@ -229,11 +235,16 @@
  \resumeSubHeadingListStart
     % \resumeSubItem{Volunteering}
     %   {Taught 4th graders engineering and robotics concepts using Lego Mindstorms as a member of NYCares}
-    % \resumeSubItem{Skills}
-    %   {Go, JavaScript, MySQL, AWS, Redis, Docker, Vagrant, Puppet, GitLab Pipelines, JWT}
     \resumeSubItem{Interests}
-      {City captain for Tea With Strangers, hiking, meditation, technology, scuba diving, social psychology}
+      {City captain for Tea With Strangers, hiking, meditation, technology, home automation, scuba diving}
  \resumeSubHeadingListEnd
+
+
+%--------Footer------------
+\centering
+\begin{tabular*}{0.8\textwidth}{l@{\extracolsep{\fill}}r}
+    \vspace{-36pt}\faGithub{} \href{https://github.com/kylechadha}{https://github.com/kylechadha} & \faLinkedinSquare{} \href{https://www.linkedin.com/in/kylechadha}{https://www.linkedin.com/in/kylechadha}
+\end{tabular*}
 
 
 %-------------------------------------------
